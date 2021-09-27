@@ -137,7 +137,7 @@ func (m *Manager) list(includeMetadata bool) ([]extensions.Extension, error) {
 				exePath = filepath.Join(p, f.Name())
 			}
 		}
-		// TODO try a NewFromDir function thst can handle git/bin
+		// TODO try a NewFromDir function that can handle git/bin
 		results = append(results, &Extension{
 			path:            exePath,
 			url:             remoteUrl,
@@ -146,6 +146,11 @@ func (m *Manager) list(includeMetadata bool) ([]extensions.Extension, error) {
 		})
 	}
 	return results, nil
+}
+
+func parseExtensionDir(dir string) (*Extension, error) {
+	// TODO
+	return nil, nil
 }
 
 func (m *Manager) getRemoteUrl(extension string) string {
